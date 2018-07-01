@@ -1,0 +1,13 @@
+- https://proandroiddev.com/android-coroutine-recipes-33467a4302e9
+- https://www.slideshare.net/mobile/fabio_collini/async-code-on-kotlin-rx-java-orand-coroutines-kotlin-night-turin
+- https://hellsoft.se/even-smarter-async-with-coroutine-actors-6d35d8f5c8f3
+- https://github.com/dcampogiani/AndroidFunctionalValidation
+- https://github.com/Kotlin/kotlinx.coroutines/issues/61
+- https://proandroiddev.com/android-coroutine-recipes-33467a4302e9
+- https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.experimental/-coroutine-exception-handler/
+- https://medium.com/@macastiblancot/android-coroutines-getting-rid-of-runonuithread-and-callbacks-cleaner-thread-handling-and-more-234c0a9bd8eb
+- https://medium.com/@tonyowen/android-kotlin-coroutines-unit-test-16e984ba35b4
+- https://medium.cobeisfresh.com/making-android-networking-pretty-with-kotlin-coroutines-b364ffbd803c
+- https://medium.com/capital-one-developers/kotlin-coroutines-on-android-things-i-wish-i-knew-at-the-beginning-c2f0b1f16cff
+- https://medium.com/@andrea.bresolin/playing-with-kotlin-in-android-coroutines-and-how-to-get-rid-of-the-callback-hell-a96e817c108b
+- https://proandroiddev.com/async-code-using-kotlin-coroutines-233d201099ff

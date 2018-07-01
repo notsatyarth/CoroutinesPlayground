@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "an.droids.coroutines"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.kotlin.stdlib.jdk
+    implementation deps.android.support.appCompat
+    implementation deps.android.support.constraintLayout
+    implementation deps.android.x.coreKtx
+    implementation deps.kotlin.coroutines.jdk
+    implementation deps.kotlin.coroutines.android
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation deps.junit
+    testImplementation deps.kotlin.test.jdk
+    androidTestImplementation deps.android.test.runner
+    androidTestImplementation deps.android.test.rules
+}

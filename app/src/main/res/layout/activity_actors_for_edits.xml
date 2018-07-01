@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".actors.ActorsForEdits">
+
+
+  <TextView
+    android:id="@+id/plus_one"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="92dp"
+    android:layout_marginStart="92dp"
+    android:padding="8dp"
+    android:background="#EFEFEF"
+    android:text="+1"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+  <TextView
+    android:id="@+id/plus_two"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="92dp"
+    android:layout_marginStart="72dp"
+    android:padding="8dp"
+    android:background="#EFEFEF"
+    android:text="+2"
+    app:layout_constraintStart_toEndOf="@+id/plus_one"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+  <TextView
+    android:id="@+id/plus_three"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="92dp"
+    android:layout_marginStart="68dp"
+    android:padding="8dp"
+    android:background="#EFEFEF"
+    android:text="+3"
+    app:layout_constraintStart_toEndOf="@+id/plus_two"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+
+  <TextView
+    android:id="@+id/summer"
+    android:layout_width="116dp"
+    android:layout_height="51dp"
+    android:layout_marginTop="264dp"
+    android:layout_marginStart="132dp"
+    android:padding="8dp"
+    android:text="0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

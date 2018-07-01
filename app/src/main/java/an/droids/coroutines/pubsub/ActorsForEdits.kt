@@ -1,4 +1,4 @@
-package an.droids.coroutines.actors
+package an.droids.coroutines.pubsub
 
 import an.droids.coroutines.R
 import android.os.Bundle

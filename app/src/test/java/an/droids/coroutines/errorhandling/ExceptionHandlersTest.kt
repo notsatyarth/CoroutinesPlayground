@@ -7,7 +7,7 @@ import org.junit.Test
 
 class ExceptionHandlersTest {
     @Test
-    fun `test uncaught exception handling on coroutines`() = runBlocking {
+    fun `default exception handler handles uncaught exceptions`() = runBlocking {
         val runWithoutException = List(100) { idx ->
             launch(fallibleThreadPool) {
                 when {
@@ -15,11 +15,31 @@ class ExceptionHandlersTest {
                     idx % 3 == 0 -> listOf(1)[2] // Index out of bounds
                     idx % 4 == 0 -> emptyMap<String, String>()["InvalidKey"]!!.contains("a") //NPE
                     idx % 5 == 0 -> throw Throwable()
-                    else -> log("Without Exception")
+                    else -> log("Success")
                 }
             }
         }
         runWithoutException.forEach { it.join() }
     }
+
+    @Test
+    fun `DSL for tracking`() = runBlocking {
+        val jobs =
+                List(100) { idx ->
+                    track {
+                        when {
+                            idx % 2 == 0 -> 1.div(0) //divide by zero
+                            idx % 3 == 0 -> listOf(1)[2] // Index out of bounds
+                            idx % 4 == 0 -> emptyMap<String, String>()["InvalidKey"]!!.contains(
+                                    "a") //NPE
+                            idx % 5 == 0 -> throw Throwable()
+                            else -> log("Success")
+                        }
+                    }
+                }
+        jobs.forEach { it.join() }
+    }
+
+
 
 }

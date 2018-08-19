@@ -9,9 +9,10 @@ import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.channels.actor
 import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.experimental.newSingleThreadContext
 
 class ActorsForEdits : AppCompatActivity() {
-
+    val clickerPool = newSingleThreadContext("click events")
     private val clickListener: View.OnClickListener = View.OnClickListener { v ->
         val msg = when {
             v.id == R.id.plus_one -> Inc1()
@@ -19,7 +20,21 @@ class ActorsForEdits : AppCompatActivity() {
             v.id == R.id.plus_three -> Inc3()
             else -> Inc1()
         }
-        launch(CommonPool) { counterActor.send(msg) }
+        launch(CommonPool) { counterActor.offer(msg) }
+
+        findViewById<View>(R.id.plus_one).setOnClickListener {
+            launch(clickerPool) { buttonClickActor.offer(1) }
+        }
+    }
+
+    private val buttonClickActor = actor<Int> {
+        for (msg in channel) {
+            performClick()
+        }
+    }
+
+    private fun performClick() {
+
     }
 
     private val counterActor = actor<Counter> {

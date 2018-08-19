@@ -8,14 +8,15 @@ import kotlinx.coroutines.experimental.newFixedThreadPoolContext
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 
-val fallibleThreadPool = newFixedThreadPoolContext(2,
-        "FallibleThreadPool") + CoroutineExceptionHandler { coroutineContext, t ->
+val fallibleThreadPool = newFixedThreadPoolContext(2, "FallibleThreadPool") +
+        CoroutineExceptionHandler { coroutineContext, t ->
     val out = ByteArrayOutputStream()
     t.printStackTrace(PrintStream(out))
-    log("Exception occurred $coroutineContext : ${String(out.toByteArray())}")
+    val error = String(out.toByteArray())
+    log("Exception in $coroutineContext : $error")
 }
 
-inline fun track(noinline block: () -> Unit): Job {
+inline fun track(crossinline block: () -> Unit): Job {
     return launch(fallibleThreadPool) {
         block.invoke()
     }

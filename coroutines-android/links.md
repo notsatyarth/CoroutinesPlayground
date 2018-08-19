@@ -11,3 +11,7 @@
 - https://medium.com/capital-one-developers/kotlin-coroutines-on-android-things-i-wish-i-knew-at-the-beginning-c2f0b1f16cff
 - https://medium.com/@andrea.bresolin/playing-with-kotlin-in-android-coroutines-and-how-to-get-rid-of-the-callback-hell-a96e817c108b
 - https://proandroiddev.com/async-code-using-kotlin-coroutines-233d201099ff
+- https://akarnokd.blogspot.com/2017/09/rxjava-vs-kotlin-coroutines-quick-look.html
+- https://blog.mindorks.com/rxjava-anatomy-what-is-rxjava-how-rxjava-is-designed-and-how-rxjava-works-d357b3aca586
+- https://sourcediving.com/kotlin-coroutines-in-android-e2d5bb02c275
+- 

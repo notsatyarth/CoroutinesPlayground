@@ -10,6 +10,9 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
     <activity android:name=".pubsub.ActorsForEdits">
+
+    </activity>
+    <activity android:name=".animations.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
